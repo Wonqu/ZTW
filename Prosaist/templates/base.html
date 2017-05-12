@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prosaist</title>
+</head>
+<body>
+
+<div class="navbar" id="navbar">
+  <a href="{% url 'index' %}">Home</a>
+  <a href="{% url 'login' %}">Login</a>
+  <a href="{% url 'signup' %}">Sign-up</a>
+</div>
+{% block content %}{% endblock %}
+
+</body>
+</html>
