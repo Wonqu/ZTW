@@ -1,3 +1,24 @@
 table{
     background-color: lightblue;
 }
+
+a:link {
+    background-color: #617ef4;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:visited{
+    background: #1B689B;
+}
+
+a:hover{
+    background: #A923C4;
+}
+
+a:active{
+    background: #0FAA2B;
+}
