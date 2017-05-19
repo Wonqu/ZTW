@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from Prosaist.views import index, login, logout, signup, entity
+from Prosaist.views import index, login, logout, signup, event, entity, category
 
 urlpatterns = [
      url(r'^$', index, name='index')
