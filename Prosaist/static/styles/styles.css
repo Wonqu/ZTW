@@ -1,24 +1,63 @@
-table{
-    background-color: lightblue;
+div.user {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    border: 1px solid #617ef4;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 20px;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background-color: white;
+    -webkit-transform:   translateX(50%) translateY(-50%) ;
+    transform:   translateX(50%) translateY(-50%) ;
 }
 
-a:link {
+a.user, input.user {
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #2a0086;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font: normal normal bold 16px/normal Arial, Helvetica, sans-serif;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+    text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+    -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
     background-color: #617ef4;
     color: white;
-    padding: 14px 25px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
 }
 
-a:visited{
-    background: #1B689B;
+a.user:link{
+    background-color: #617ef4;
+    color: white;
 }
 
-a:hover{
-    background: #A923C4;
+a.user:visited{
+    background-color: #1B689B;
+    color:white;
 }
 
-a:active{
-    background: #0FAA2B;
+a.user:hover{
+    background-color: #A923C4;
+    color: white;
+}
+
+a.user:active{
+    background-color: #0FAA2B;
+    color:white;
 }
