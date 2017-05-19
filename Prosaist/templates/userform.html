@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    <form action="" method="post">
+    <form action="" method="post"><div class="user">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>
-        <input type="submit" value="{{ request.path }}" />
-    </form>
+        <input class="user" type="submit" value="{{ request.path }}" />
+    </div></form>
 {% endblock %}

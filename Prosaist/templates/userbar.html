@@ -1,10 +1,10 @@
 {% block userbar %}
-  <a href="{% url 'entity' username=username projectname=projectname %}">Add Entity</a>
-  <a href="{% url 'status' username=username projectname=projectname %}">Add Status</a>
-  <a href="{% url 'category' username=username projectname=projectname %}">Add Category</a>
-  <a href="{% url 'event' username=username projectname=projectname %}">Add Event</a>
-  <a href="{% url 'display_entity' username=username projectname=projectname %}">Show Entities</a>
-  <a href="{% url 'display_status' username=username projectname=projectname %}">Show Statuses</a>
-  <a href="{% url 'display_category' username=username projectname=projectname %}">Show Categories</a>
-  <a href="{% url 'display_event' username=username projectname=projectname %}">Show Events</a>
+  <a class="user" href="{% url 'entity' username=username projectname=projectname %}">Add Entity</a>
+  <a class="user" href="{% url 'status' username=username projectname=projectname %}">Add Status</a>
+  <a class="user" href="{% url 'category' username=username projectname=projectname %}">Add Category</a>
+  <a class="user" href="{% url 'event' username=username projectname=projectname %}">Add Event</a>
+  <a class="user" href="{% url 'display_entity' username=username projectname=projectname %}">Show Entities</a>
+  <a class="user" href="{% url 'display_status' username=username projectname=projectname %}">Show Statuses</a>
+  <a class="user" href="{% url 'display_category' username=username projectname=projectname %}">Show Categories</a>
+  <a class="user" href="{% url 'display_event' username=username projectname=projectname %}">Show Events</a>
 {% endblock %}
