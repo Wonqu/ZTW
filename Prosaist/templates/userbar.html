@@ -1,0 +1,6 @@
+{% block userbar %}
+  <a href="{% url 'entity' username=username projectname=projectname %}">Add Entity</a>
+  <a href="{% url 'status' username=username projectname=projectname %}">Add Status</a>
+  <a href="{% url 'category' username=username projectname=projectname %}">Add Category</a>
+  <a href="{% url 'event' username=username projectname=projectname %}">Add Event</a>
+{% endblock %}

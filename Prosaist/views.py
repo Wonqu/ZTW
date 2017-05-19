@@ -20,5 +20,6 @@ def logout(request):
 def signup(request):
     return view_signup.view(request)
 
-def entity(request):
-    return view_entity.view(request)
+
+def entity(request, username, projectname):
+    return view_entity.view(request, username, projectname)
