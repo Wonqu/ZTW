@@ -1,6 +1,9 @@
 message_entity_success = 'Entity saved successfully!'
 message_entity_error = 'Failed to save Entity!'
 
+message_status_success = 'Status saved successfully!'
+message_status_error = 'Failed to save Status!'
+
 message_event_success = 'Event saved successfully!'
 message_event_error = 'Failed to save Event!'
 
@@ -16,5 +19,5 @@ message_project_error = 'Failed to create Project!'
 message_signup_success = 'Signed up successfully!'
 message_signup_error = 'Failed to Sign up!'
 
-message_login_success ='Logged in!'
+message_login_success = 'Logged in!'
 message_login_error = 'Failed to log in!'

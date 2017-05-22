@@ -5,10 +5,11 @@ from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from Prosaist.text import messages as msg
 
+
 def view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
-        if(form.is_valid()):
+        if (form.is_valid()):
             try:
                 user = authenticate(username=form.cleaned_data["username"], password=form.cleaned_data["password1"])
                 if user is not None:
@@ -20,4 +21,4 @@ def view(request):
             return HttpResponseRedirect('..')
     else:
         form = LoginForm()
-    return render(request, "userform.html", {'form' : form})
+    return render(request, "userform.html", {'form': form})

@@ -2,9 +2,15 @@ from Prosaist.view_scripts import index as view_index
 from Prosaist.view_scripts import login as view_login
 from Prosaist.view_scripts import logout as view_logout
 from Prosaist.view_scripts import signup as view_signup
-from Prosaist.view_scripts import event as view_event
-from Prosaist.view_scripts import entity as view_entity
-from Prosaist.view_scripts import category as view_category
+from Prosaist.view_scripts import input_single_event as view_event
+from Prosaist.view_scripts import input_single_entity as view_entity
+from Prosaist.view_scripts import input_single_category as view_category
+from Prosaist.view_scripts import input_single_status as view_status
+from Prosaist.view_scripts import display_entity as view_entities
+from Prosaist.view_scripts import display_status as view_statuses
+from Prosaist.view_scripts import display_category as view_categories
+from Prosaist.view_scripts import display_event as view_events
+
 
 
 def index(request):
@@ -27,14 +33,29 @@ def entity(request, username, projectname):
     return view_entity.view(request, username, projectname)
 
 
-def entity(request):
-    return view_entity.view(request)
+def event(request, username, projectname):
+    return view_event.view(request, username, projectname)
 
 
-def event(request):
-    return view_event.view(request)
+def status(request, username, projectname):
+    return view_status.view(request, username, projectname)
 
 
-def category(request):
-    return view_category.view(request)
+def category(request, username, projectname):
+    return view_category.view(request, username, projectname)
 
+
+def display_entity(request, username, projectname):
+    return view_entities.view(request, username, projectname)
+
+
+def display_status(request, username, projectname):
+    return view_statuses.view(request, username, projectname)
+
+
+def display_category(request, username, projectname):
+    return view_categories.view(request, username, projectname)
+
+
+def display_event(request, username, projectname):
+    return view_events.view(request, username, projectname)

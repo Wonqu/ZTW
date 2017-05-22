@@ -12,8 +12,8 @@ div.user {
     -o-text-overflow: clip;
     text-overflow: clip;
     background-color: white;
-    -webkit-transform:   translateX(50%) translateY(-50%) ;
-    transform:   translateX(50%) translateY(-50%) ;
+    -webkit-transform: translateX(50%) translateY(-50%);
+    transform: translateX(50%) translateY(-50%);
 }
 
 a.user, input.user {
@@ -29,9 +29,9 @@ a.user, input.user {
     font: normal normal bold 16px/normal Arial, Helvetica, sans-serif;
     -o-text-overflow: clip;
     text-overflow: clip;
-    -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
-    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
-    text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+    -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: -1px -1px 0 rgba(15, 73, 168, 0.66);
     -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
     -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
     -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
@@ -42,22 +42,22 @@ a.user, input.user {
     text-decoration: none;
 }
 
-a.user:link{
+a.user:link {
     background-color: #617ef4;
     color: white;
 }
 
-a.user:visited{
+a.user:visited {
     background-color: #1B689B;
-    color:white;
+    color: white;
 }
 
-a.user:hover{
+a.user:hover {
     background-color: #A923C4;
     color: white;
 }
 
-a.user:active{
+a.user:active {
     background-color: #0FAA2B;
-    color:white;
+    color: white;
 }

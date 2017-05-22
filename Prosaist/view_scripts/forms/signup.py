@@ -2,6 +2,7 @@ from django import forms
 from Prosaist.models import ProsaistUser
 from django.contrib.auth.forms import UserCreationForm
 
+
 class UserCreateForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
