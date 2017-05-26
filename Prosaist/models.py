@@ -60,6 +60,7 @@ class Event(models.Model):
 
 
 class Period(models.Model):
+    name = models.CharField(max_length=255)
     event_start = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='estart')
     event_end = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='eend')
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
