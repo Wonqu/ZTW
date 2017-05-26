@@ -6,11 +6,13 @@ from Prosaist.view_scripts import input_single_event as view_event
 from Prosaist.view_scripts import input_single_entity as view_entity
 from Prosaist.view_scripts import input_single_category as view_category
 from Prosaist.view_scripts import input_single_status as view_status
+from Prosaist.view_scripts import input_category_conflict as view_category_conflict
+from Prosaist.view_scripts import input_period as view_period
 from Prosaist.view_scripts import display_entity as view_entities
 from Prosaist.view_scripts import display_status as view_statuses
 from Prosaist.view_scripts import display_category as view_categories
 from Prosaist.view_scripts import display_event as view_events
-
+from Prosaist.view_scripts import display_category_conflicts as view_category_conflicts
 
 
 def index(request):
@@ -45,6 +47,14 @@ def category(request, username, projectname):
     return view_category.view(request, username, projectname)
 
 
+def category_conflict(request, username, projectname):
+    return view_category_conflict.view(request, username, projectname)
+
+
+def period(request, username, projectname):
+    return view_period.view(request, username, projectname);
+
+
 def display_entity(request, username, projectname):
     return view_entities.view(request, username, projectname)
 
@@ -59,3 +69,7 @@ def display_category(request, username, projectname):
 
 def display_event(request, username, projectname):
     return view_events.view(request, username, projectname)
+
+
+def display_category_conflicts(request, username, projectname):
+    return view_category_conflicts.view(request, username, projectname)

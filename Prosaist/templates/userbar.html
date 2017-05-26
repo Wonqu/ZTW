@@ -3,8 +3,11 @@
     <a class="user" href="{% url 'status' username=username projectname=projectname %}">Add Status</a>
     <a class="user" href="{% url 'category' username=username projectname=projectname %}">Add Category</a>
     <a class="user" href="{% url 'event' username=username projectname=projectname %}">Add Event</a>
+    <a class="user" href="{% url 'category_conflict' username=username projectname=projectname %}">Add Category Conflict</a>
+    <a class="user" href="{% url 'period' username=username projectname=projectname %}">Add Period</a>
     <a class="user" href="{% url 'display_entity' username=username projectname=projectname %}">Show Entities</a>
     <a class="user" href="{% url 'display_status' username=username projectname=projectname %}">Show Statuses</a>
     <a class="user" href="{% url 'display_category' username=username projectname=projectname %}">Show Categories</a>
     <a class="user" href="{% url 'display_event' username=username projectname=projectname %}">Show Events</a>
+    <a class="user" href="{% url 'display_category_conflicts' username=username projectname=projectname %}">Show Category Conflicts</a>
 {% endblock %}

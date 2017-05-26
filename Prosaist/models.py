@@ -38,6 +38,10 @@ class Category_Conflict(models.Model):
     category_2 = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='cc_2')
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
 
+    class Meta:
+        unique_together = ("category_1", "category_2",)
+
+
 
 class Status(models.Model):
     name = models.CharField(max_length=255)

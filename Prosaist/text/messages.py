@@ -10,6 +10,9 @@ message_event_error = 'Failed to save Event!'
 message_category_success = 'Category saved successfully!'
 message_category_error = 'Failed to save Category!'
 
+message_categoryConflict_success = 'Category Conflict saved successfully!'
+message_categoryConflict_error = 'Failed to save Category Conflict!'
+
 message_period_success = 'Period saved successfully!'
 message_period_error = 'Failed to save Period!'
 
