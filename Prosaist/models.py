@@ -66,6 +66,12 @@ class Period(models.Model):
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
 
 
+class BelongsTo(models.Model):
+    entity = models.ForeignKey(Entity, on_delete=models.CASCADE, related_name='bel_ent')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='bel_cat')
+    project = models.ForeignKey(Project, on_delete=models.PROTECT)
+
+
 class AffectedBy(models.Model):
     entity = models.ForeignKey(Entity, on_delete=models.CASCADE)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)

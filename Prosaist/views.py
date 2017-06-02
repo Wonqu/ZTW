@@ -8,11 +8,18 @@ from Prosaist.view_scripts import input_single_category as view_category
 from Prosaist.view_scripts import input_single_status as view_status
 from Prosaist.view_scripts import input_category_conflict as view_category_conflict
 from Prosaist.view_scripts import input_period as view_period
+from Prosaist.view_scripts import input_affectedby as view_affectedby
+from Prosaist.view_scripts import input_entity_relation as view_entity_relation
+from Prosaist.view_scripts import input_status_conflict as view_status_conflict
 from Prosaist.view_scripts import display_entity as view_entities
 from Prosaist.view_scripts import display_status as view_statuses
 from Prosaist.view_scripts import display_category as view_categories
 from Prosaist.view_scripts import display_event as view_events
-from Prosaist.view_scripts import display_category_conflicts as view_category_conflicts
+from Prosaist.view_scripts import display_category_conflicts as view_dis_category_conflict
+from Prosaist.view_scripts import display_period as view_dis_period
+from Prosaist.view_scripts import display_affectedby as view_dis_affectedby
+from Prosaist.view_scripts import display_entity_relation as view_dis_entity_relation
+from Prosaist.view_scripts import display_status_conflicts as view_dis_status_conflict
 
 
 def index(request):
@@ -52,7 +59,19 @@ def category_conflict(request, username, projectname):
 
 
 def period(request, username, projectname):
-    return view_period.view(request, username, projectname);
+    return view_period.view(request, username, projectname)
+
+
+def affectedby(request, username, projectname):
+    return view_affectedby.view(request, username, projectname)
+
+
+def entity_relation(request, username, projectname):
+    return view_entity_relation.view(request, username, projectname)
+
+
+def status_conflict(request, username, projectname):
+    return view_status_conflict.view(request, username, projectname)
 
 
 def display_entity(request, username, projectname):
@@ -72,4 +91,20 @@ def display_event(request, username, projectname):
 
 
 def display_category_conflicts(request, username, projectname):
-    return view_category_conflicts.view(request, username, projectname)
+    return view_dis_category_conflict.view(request, username, projectname)
+
+
+def display_period(request, username, projectname):
+    return view_dis_period.view(request, username, projectname)
+
+
+def display_affected(request, username, projectname):
+    return view_dis_affectedby.view(request, username, projectname)
+
+
+def display_entity_relation(request, username, projectname):
+    return view_dis_entity_relation.view(request, username, projectname)
+
+
+def display_status_conflicts(request, username, projectname):
+    return view_dis_status_conflict.view(request, username, projectname)
