@@ -1,3 +1,7 @@
+body {
+    margin:0;
+}
+
 div.user {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -16,7 +20,97 @@ div.user {
     transform: translateX(50%) translateY(-50%);
 }
 
-a.user, input.user {
+ul.userbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2a0086;
+}
+
+li.userbar, li.projectbar{
+    float: left;
+}
+
+a.userbar, input.user{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a.userbar:hover {
+    background-color: #617ef4;
+    color: white;
+}
+
+a.active {
+    background-color: #0FAA2B;
+    color: white;
+}
+
+ul.projectbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2a0086;
+}
+
+li.projectbar a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: blue;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+a.userName{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: #617ef4;
+}
+
+li.userName{
+    background-color: #617ef4;
+}
+
+a.button, input.button {
     display: inline-block;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -42,22 +136,12 @@ a.user, input.user {
     text-decoration: none;
 }
 
-a.user:link {
+a.button:link {
     background-color: #617ef4;
     color: white;
 }
 
-a.user:visited {
+a.button:visited {
     background-color: #1B689B;
-    color: white;
-}
-
-a.user:hover {
-    background-color: #A923C4;
-    color: white;
-}
-
-a.user:active {
-    background-color: #0FAA2B;
     color: white;
 }

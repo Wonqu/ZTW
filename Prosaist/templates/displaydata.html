@@ -5,7 +5,8 @@
             <tr>
             <td>
             <!-- ToDo Refactor -->
-                {% if item.name %}{{ item.name }} {% else %} {{ item.category_1.name }} - {{item.category_2.name }} {% endif %}
+                {% if single %}{{ item.name }}
+                {% else %} {{ item.category_1.name }} - {{item.category_2.name }} {% endif %}
             </td>
             </tr>
         {% endfor %}

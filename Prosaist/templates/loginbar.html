@@ -1,5 +1,7 @@
 {% block userbar %}
-    <a class="user" href="{% url 'index' %}">Home</a>
-    <a class="user" href="{% url 'login' %}">Login</a>
-    <a class="user" href="{% url 'signup' %}">Sign-up</a>
+    <ul class="userbar">
+        <li class="userbar" {% if request.resolver_match.url_name == 'index' %} class="active" {% endif %}><a class="userbar" href="{% url 'index' %}">Home</a></li>
+        <li class="userbar" {% if request.resolver_match.url_name == 'login' %} class="active" {% endif %}><a class="userbar" href="{% url 'login' %}">Login</a></li>
+        <li class="userbar" {% if request.resolver_match.url_name == 'signup' %} class="active" {% endif %}><a class="userbar" href="{% url 'signup' %}">Sign-up</a></li>
+    </ul>
 {% endblock %}
