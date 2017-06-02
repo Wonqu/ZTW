@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
+from django.contrib.auth import logout
 
 
 def view(request):
-    return HttpResponse("Hello, world.")
+    logout(request=request)
+    return HttpResponseRedirect(redirect_to='/prosaist/')

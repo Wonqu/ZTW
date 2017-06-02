@@ -20,6 +20,8 @@ from Prosaist.view_scripts import display_period as view_dis_period
 from Prosaist.view_scripts import display_affectedby as view_dis_affectedby
 from Prosaist.view_scripts import display_entity_relation as view_dis_entity_relation
 from Prosaist.view_scripts import display_status_conflicts as view_dis_status_conflict
+from Prosaist.view_scripts import display_userprojects as view_userprojects
+from Prosaist.view_scripts import display_project as view_project
 
 
 def index(request):
@@ -36,6 +38,14 @@ def logout(request):
 
 def signup(request):
     return view_signup.view(request)
+
+
+def userprojects(request, username):
+    return view_userprojects.view(request, username)
+
+
+def project(request, username, projectname):
+    return view_project.view(request, username, projectname)
 
 
 def entity(request, username, projectname):

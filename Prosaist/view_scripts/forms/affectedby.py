@@ -8,9 +8,9 @@ class MyModelChoiceField(forms.ModelChoiceField):
 
 
 class AffectedByCreateForm(forms.Form):
-    entity = forms.ModelChoiceField(label='Entity', queryset=Entity.objects.all())
-    period = forms.ModelChoiceField(label='Period', queryset=Period.objects.all())
-    status = forms.ModelChoiceField(label='Status', queryset=Status.objects.all())
+    entity = MyModelChoiceField(label='Entity', queryset=Entity.objects.all())
+    period = MyModelChoiceField(label='Period', queryset=Period.objects.all())
+    status = MyModelChoiceField(label='Status', queryset=Status.objects.all())
     project = forms.IntegerField(label='Project ID')
 
     def __init__(self, *args, **kwargs):

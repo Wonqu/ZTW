@@ -9,9 +9,14 @@
 <body>
 
 <div class="navbar" id="navbar">
-    {% if username %}
-        {{ username }}
-        {% include 'userbar.html' %}
+    {% if request.user.username %}
+        {{ request.user.username }}
+        <a class="user" href="{% url 'logout' %}">Log-out</a>
+        {% if projectname %}
+            {% include 'userbar.html' %}
+        {% else %}
+            {% include 'displaylinks.html' %}
+        {% endif %}
     {% else %}
         {% include 'loginbar.html' %}
     {% endif %}

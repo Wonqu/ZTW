@@ -1,0 +1,15 @@
+{% block links %}
+    <table>
+        {% for item in data %}
+            <tr>
+                <td>
+                    <!-- ToDo Refactor -->
+                    {% if item.name %}
+                        <a class="user"
+                           href="{% url 'project' username=request.user.username projectname=item.name %}"> {{ item.name }}</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
