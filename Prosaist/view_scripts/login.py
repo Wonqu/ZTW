@@ -11,13 +11,12 @@ def view(request):
         form = LoginForm(request.POST)
         if (form.is_valid()):
             try:
-                user = authenticate(username=form.cleaned_data["username"], password=form.cleaned_data["password1"])
+                user = authenticate(username=form.cleaned_data["username"], password=form.cleaned_data["password"])
                 if user is not None:
-                    request.session['username'] = form.cleaned_data["username"]
                     login(request, user)
                     messages.add_message(request, messages.SUCCESS, msg.message_login_success)
             except KeyError:
-                messages.add_message(request, messages.SUCCESS, msg.message_login_error)
+                messages.add_message(request, messages.ERROR, msg.message_login_error)
             return HttpResponseRedirect('..')
     else:
         form = LoginForm()

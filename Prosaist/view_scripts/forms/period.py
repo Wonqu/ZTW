@@ -8,8 +8,9 @@ class MyModelChoiceField(forms.ModelChoiceField):
 
 
 class PeriodCreateForm(forms.Form):
-    event1 = forms.ModelChoiceField(label='First event', queryset=Event.objects.all())
-    event2 = forms.ModelChoiceField(label='Second event', queryset=Event.objects.all())
+    name = forms.CharField(label='Period name', max_length=255)
+    event1 = MyModelChoiceField(label='First event', queryset=Event.objects.all())
+    event2 = MyModelChoiceField(label='Second event', queryset=Event.objects.all())
     project = forms.IntegerField(label='Project ID')
 
     def __init__(self, *args, **kwargs):
@@ -22,4 +23,4 @@ class PeriodCreateForm(forms.Form):
 
     class Meta:
         model = Period
-        fields = ("event1", "event2", "project")
+        fields = ("name", "event1", "event2", "project")

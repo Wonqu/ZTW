@@ -1,14 +1,18 @@
 from django.conf.urls import url
 
 from Prosaist.views import index, login, logout, signup, event, entity, category, category_conflict, period, affectedby,\
-    status_conflict, entity_relation, status, display_entity,display_status, display_category, display_event,\
-    display_category_conflicts, display_affected, display_entity_relation, display_period, display_status_conflicts
+    status_conflict, entity_relation, status, display_entity,display_status, display_category, display_event, \
+    display_category_conflicts, display_affected, display_entity_relation, display_period, display_status_conflicts, \
+    userprojects, project
 
 urlpatterns = [
      url(r'^$', index, name='index')
     , url(r'^login/$', login, name='login')
     , url(r'^logout/$', logout, name='logout')
     , url(r'^signup/$', signup, name='signup')
+    # User
+    , url(r'^u/(?P<username>[\w.@+-]+)/$', userprojects, name='userprojects')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w.@+-]+)/$', project, name='project')
     #Single input
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w.@+-]+)/entity/$', entity, name='entity')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w.@+-]+)/status/$', status, name='status')
