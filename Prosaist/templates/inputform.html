@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% if user.is_authenticated %}
     <form action="" method="post">
         <div class="user">
             {% csrf_token %}
@@ -9,4 +10,5 @@
             <input class="button" type="submit" value="Save"/>
         </div>
     </form>
+{% endif%}
 {% endblock %}

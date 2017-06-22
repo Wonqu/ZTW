@@ -24,4 +24,4 @@ class AffectedByCreateForm(forms.Form):
 
     class Meta:
         model = AffectedBy
-        fields = ("entity", "period", "status","project")
+        fields = ("entity", "period", "status", "project")

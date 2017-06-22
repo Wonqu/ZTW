@@ -17,7 +17,12 @@ message_period_success = 'Period saved successfully!'
 message_period_error = 'Failed to save Period!'
 
 message_affectedBy_success = 'Affected By saved successfully!'
+message_affectedBy_conflict = 'There is a status conflict.'
 message_affectedBy_error = 'Failed to save Affected By!'
+
+message_belongsTo_success = 'Belongs To saved successfully!'
+message_belongsTo_conflict = 'There is a category conflict.'
+message_belongsTo_error = 'Failed to save Belongs To!'
 
 message_entityRelation_success = 'Entity Relation saved successfully!'
 message_entityRelation_error = 'Failed to save Entity Relation!'

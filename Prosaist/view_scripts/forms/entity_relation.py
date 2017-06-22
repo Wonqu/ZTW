@@ -1,5 +1,5 @@
 from django import forms
-from Prosaist.models import Entity_Relation, Entity
+from Prosaist.models import Entity_Relation, Entity, Period
 
 
 class MyModelChoiceField(forms.ModelChoiceField):
@@ -8,6 +8,8 @@ class MyModelChoiceField(forms.ModelChoiceField):
 
 
 class EntityRelationCreateForm(forms.Form):
+    name = forms.CharField(label='Relation name', max_length=155)
+    period = MyModelChoiceField(label='Period', queryset=Period.objects.all())
     entity1 = MyModelChoiceField(label='First entity', queryset=Entity.objects.all())
     entity2 = MyModelChoiceField(label='Second entity', queryset=Entity.objects.all())
     project = forms.IntegerField(label='Project ID')
@@ -17,11 +19,12 @@ class EntityRelationCreateForm(forms.Form):
         super(EntityRelationCreateForm, self).__init__(*args, **kwargs)
 
         if projectid:
+            self.fields['period'].queryset = Period.objects.filter(project_id=projectid)
             self.fields['entity1'].queryset = Entity.objects.filter(project_id=projectid)
             self.fields['entity2'].queryset = Entity.objects.filter(project_id=projectid)
 
     class Meta:
         model = Entity_Relation
-        fields = ("entity1", "entity2", "project")
+        fields = ("name", "period", "entity1", "entity2", "project")
 
 

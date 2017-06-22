@@ -6,20 +6,24 @@ from django.contrib import messages
 
 
 def view_base(request, username, projectname, model, modelform, msg_success, msg_error):
-    user_id = User.objects.get(username=username)
-    project = Project.objects.get(name=projectname, owner_id=user_id)
-    project_id = project.id
-    form = modelform(initial={'project': project_id})
-    form.fields['project'].widget.attrs['readonly'] = True
-    if request.method == 'POST':
-        form = modelform(request.POST)
-        if (form.is_valid()):
-            try:
-                name = request.POST.get('name', '')
-                object = model(project=project, name=name)
-                object.save()
-                messages.add_message(request, messages.SUCCESS, msg_success)
-            except ObjectDoesNotExist:
-                messages.add_message(request, messages.ERROR, msg_error)
-            return HttpResponseRedirect('.')
-    return render(request, "inputform.html", {'form': form, 'username': username, 'projectname': projectname})
+    if request.user.is_authenticated:
+        user_id = User.objects.get(username=username)
+        project = Project.objects.get(name=projectname, owner_id=user_id)
+        project_id = project.id
+        form = modelform(initial={'project': project_id})
+        form.fields['project'].widget.attrs['readonly'] = True
+        form.fields['name'].widget.attrs['autofocus'] = True
+        if request.method == 'POST':
+            form = modelform(request.POST)
+            if (form.is_valid()):
+                try:
+                    name = request.POST.get('name', '')
+                    object = model(project=project, name=name)
+                    object.save()
+                    messages.add_message(request, messages.SUCCESS, msg_success)
+                except ObjectDoesNotExist:
+                    messages.add_message(request, messages.ERROR, msg_error)
+                return HttpResponseRedirect('.')
+        return render(request, "inputform.html", {'form': form, 'username': username, 'projectname': projectname})
+    else:
+        return HttpResponseRedirect('/prosaist/')

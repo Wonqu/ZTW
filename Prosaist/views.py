@@ -9,6 +9,7 @@ from Prosaist.view_scripts import input_single_status as view_status
 from Prosaist.view_scripts import input_category_conflict as view_category_conflict
 from Prosaist.view_scripts import input_period as view_period
 from Prosaist.view_scripts import input_affectedby as view_affectedby
+from Prosaist.view_scripts import input_belongsto as view_belongsto
 from Prosaist.view_scripts import input_entity_relation as view_entity_relation
 from Prosaist.view_scripts import input_status_conflict as view_status_conflict
 from Prosaist.view_scripts import display_entity as view_entities
@@ -18,6 +19,7 @@ from Prosaist.view_scripts import display_event as view_events
 from Prosaist.view_scripts import display_category_conflicts as view_dis_category_conflict
 from Prosaist.view_scripts import display_period as view_dis_period
 from Prosaist.view_scripts import display_affectedby as view_dis_affectedby
+from Prosaist.view_scripts import display_belongsto as view_dis_belongsto
 from Prosaist.view_scripts import display_entity_relation as view_dis_entity_relation
 from Prosaist.view_scripts import display_status_conflicts as view_dis_status_conflict
 from Prosaist.view_scripts import display_userprojects as view_userprojects
@@ -76,6 +78,10 @@ def affectedby(request, username, projectname):
     return view_affectedby.view(request, username, projectname)
 
 
+def belongsto(request, username, projectname):
+    return view_belongsto.view(request, username, projectname)
+
+
 def entity_relation(request, username, projectname):
     return view_entity_relation.view(request, username, projectname)
 
@@ -110,6 +116,10 @@ def display_period(request, username, projectname):
 
 def display_affected(request, username, projectname):
     return view_dis_affectedby.view(request, username, projectname)
+
+
+def display_belongsto(request, username, projectname):
+    return view_dis_belongsto.view(request, username, projectname)
 
 
 def display_entity_relation(request, username, projectname):

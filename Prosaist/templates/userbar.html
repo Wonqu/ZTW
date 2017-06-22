@@ -1,7 +1,7 @@
 {% block userbar %}
     <ul class="projectbar">
         <li class="dropdown" class="userName">
-            <a class="userName">{{ username }}</a>
+            <a class="userName">{{ projectname }}</a>
         </li>
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Entity</a>
@@ -56,6 +56,14 @@
             <div class="dropdown-content">
                 <a class="user" href="{% url 'affectedby' username=username projectname=projectname %}">Add Affected By</a>
                 <a class="user" href="{% url 'display_affectedby' username=username projectname=projectname %}">Show Affected By</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Belongs To</a>
+            <div class="dropdown-content">
+                <a class="user" href="{% url 'belongsto' username=username projectname=projectname %}">Add Belongs To</a>
+                <a class="user" href="{% url 'display_belongsto' username=username projectname=projectname %}">Show Belongs To</a>
             </div>
         </li>
 

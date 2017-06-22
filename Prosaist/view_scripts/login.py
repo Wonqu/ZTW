@@ -17,7 +17,7 @@ def view(request):
                     messages.add_message(request, messages.SUCCESS, msg.message_login_success)
             except KeyError:
                 messages.add_message(request, messages.ERROR, msg.message_login_error)
-            return HttpResponseRedirect('..')
+            return HttpResponseRedirect('../u/' + user.username + '/')
     else:
         form = LoginForm()
     return render(request, "userform.html", {'form': form})

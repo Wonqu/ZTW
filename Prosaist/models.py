@@ -21,13 +21,6 @@ class Entity(models.Model):
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
 
 
-class Entity_Relation(models.Model):
-    entity_1 = models.ForeignKey(Entity, on_delete=models.CASCADE, related_name='er_1')
-    entity_2 = models.ForeignKey(Entity, on_delete=models.CASCADE, related_name='er_2')
-    period = models.ForeignKey(Entity, on_delete=models.CASCADE)
-    project = models.ForeignKey(Project, on_delete=models.PROTECT)
-
-
 class Category(models.Model):
     name = models.CharField(max_length=255)
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
@@ -77,3 +70,13 @@ class AffectedBy(models.Model):
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
     period = models.ForeignKey(Period, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete=models.PROTECT)
+
+
+class Entity_Relation(models.Model):
+    name = models.CharField(max_length=255)
+    entity_1 = models.ForeignKey(Entity, on_delete=models.CASCADE, related_name='er_1')
+    entity_2 = models.ForeignKey(Entity, on_delete=models.CASCADE, related_name='er_2')
+    period = models.ForeignKey(Period, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.PROTECT)
+
+

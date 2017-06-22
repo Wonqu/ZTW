@@ -10,8 +10,17 @@
 
 <div class="navbar" id="navbar">
     {% if request.user.username %}
-        {{ request.user.username }}
-        <a class="user" href="{% url 'logout' %}">Log-out</a>
+        <ul class="projectbar">
+            <li class="dropdown" class="userName">
+                <a class="userName">{{ request.user.username }}</a>
+            </li>
+            <li class="dropdown">
+                <a class="userBar" class="dropbtn" href="{% url 'logout' %}">Log-out</a>
+            </li>
+            <li class="dropdown">
+                <a class="userBar" class="dropbtn" href="{% url 'userprojects' username=request.user.username %}">Projects</a>
+            </li>
+        </ul>
         {% if projectname %}
             {% include 'userbar.html' %}
         {% else %}

@@ -1,14 +1,22 @@
 {% extends "base.html" %}
+{% if user.is_authenticated %}
 {% block content %}
     <table>
         {% for item in data %}
             <tr>
             <td>
             <!-- ToDo Refactor -->
-                {% if single %}{{ item.name }}
-                {% else %} {{ item.category_1.name }} - {{item.category_2.name }} {% endif %}
+                {% if model == 'single' %}{{ item.name }}
+                {% elif model == 'aff' %} {{ item.entity.name }} - {{item.period.name }} - {{item.status.name }}
+                {% elif model == 'bel' %} {{ item.category.name }} - {{item.entity.name }}
+                {% elif model == 'c_c' %} {{ item.category_1.name }} - {{item.category_2.name }}
+                {% elif model == 'e_r' %} {{ item.period.name }}: {{ item.entity_1.name }} (- {{ item.name }} -) {{item.entity_2.name }}
+                {% elif model == 's_c' %} {{ item.status_1.name }} x {{item.status_2.name }}
+                {% elif model == 'per' %} {{ item.name }}: {{ item.event_start.name }} - {{item.event_end.name }}
+                {% endif %}
             </td>
             </tr>
         {% endfor %}
     </table>
 {% endblock %}
+{% endif %}

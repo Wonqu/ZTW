@@ -1,4 +1,5 @@
 {% block links %}
+{% if user.is_authenticated %}
     <table>
         {% for item in data %}
             <tr>
@@ -12,4 +13,5 @@
             </tr>
         {% endfor %}
     </table>
+{% endif %}
 {% endblock %}
