@@ -128,3 +128,27 @@ def display_entity_relation(request, username, projectname):
 
 def display_status_conflicts(request, username, projectname):
     return view_dis_status_conflict.view(request, username, projectname)
+
+
+def show_affected(request, username, projectname, object, attrib):
+    return view_dis_affectedby.show(request, username, projectname, object, attrib)
+
+
+def show_belongsto(request, username, projectname, object, attrib):
+    return view_dis_belongsto.show(request, username, projectname, object, attrib)
+
+
+def show_category_conflicts(request, username, projectname, object, attrib):
+    return view_dis_category_conflict.show(request, username, projectname, object, attrib)
+
+
+def show_status_conflicts(request, username, projectname, object, attrib):
+    return view_dis_status_conflict.show(request, username, projectname, object, attrib)
+
+
+def show_entity_relations(request, username, projectname, object, attrib):
+    return view_dis_entity_relation.show(request, username, projectname, object, attrib)
+
+
+def show_periods(request, username, projectname, object, attrib):
+    return view_dis_period.show(request, username, projectname, object, attrib)

@@ -3,7 +3,8 @@ from django.conf.urls import url
 from Prosaist.views import index, login, logout, signup, event, entity, category, category_conflict, period, affectedby, \
     belongsto, status_conflict, entity_relation, status, display_entity,display_status, display_category, display_event, \
     display_category_conflicts, display_affected, display_belongsto, display_entity_relation, display_period,\
-    display_status_conflicts, userprojects, project
+    display_status_conflicts, userprojects, project, show_affected, show_belongsto, show_category_conflicts, \
+    show_entity_relations, show_periods, show_status_conflicts
 
 urlpatterns = [
      url(r'^$', index, name='index')
@@ -47,5 +48,19 @@ urlpatterns = [
           name='display_entity_relation')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_status_conflict/$', display_status_conflicts,
           name='display_status_conflict')
+
+    #Show
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_affected/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+          show_affected, name='show_affectedby')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_belongsto/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+          show_belongsto, name='show_belongsto')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_categoryconflicts/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+          show_category_conflicts, name='show_categoryconflicts')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_statusconflicts/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+          show_status_conflicts, name='show_statusconflicts')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_periods/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+          show_periods, name='show_periods')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_entityrelations/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+        show_entity_relations, name='show_entityrelations')
 
 ]

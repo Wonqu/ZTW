@@ -1,18 +1,45 @@
 {% extends "base.html" %}
 {% if user.is_authenticated %}
 {% block content %}
+    <div>
+        <h2>{{ elem }} ( {{ model }} ):</h2>
+    </div>
     <table>
         {% for item in data %}
             <tr>
             <td>
             <!-- ToDo Refactor -->
-                {% if model == 'single' %}{{ item.name }}
-                {% elif model == 'aff' %} {{ item.entity.name }} - {{item.period.name }} - {{item.status.name }}
-                {% elif model == 'bel' %} {{ item.category.name }} - {{item.entity.name }}
-                {% elif model == 'c_c' %} {{ item.category_1.name }} - {{item.category_2.name }}
-                {% elif model == 'e_r' %} {{ item.period.name }}: {{ item.entity_1.name }} (- {{ item.name }} -) {{item.entity_2.name }}
-                {% elif model == 's_c' %} {{ item.status_1.name }} x {{item.status_2.name }}
-                {% elif model == 'per' %} {{ item.name }}: {{ item.event_start.name }} - {{item.event_end.name }}
+                {% if model == 'entities' %} <ul class="dispData">
+                    <li class="dropdown" class="dispData"><a href="javascript:void(0)" class="dropData">{{ item.name }}</a><div class="dropdown-content">
+                    <a class="data" href="{% url 'show_entityrelations' username=username projectname=projectname object=item.id attrib=item %}">Show Entity Relations</a>
+                    <a class="data" href="{% url 'show_belongsto' username=username projectname=projectname object=item.id attrib=item %}">Show Belongs To</a>
+                    <a class="data" href="{% url 'show_affectedby' username=username projectname=projectname object=item.id attrib=item %}">Show Affected By</a>
+                    </div></li></ul>
+                {% elif model == 'categories' %} <li class="dropdown" class="dispData"><a href="javascript:void(0)" class="dropData">{{ item.name }}</a><div class="dropdown-content">
+                    <a class="data" href="{% url 'show_categoryconflicts' username=username projectname=projectname object=item.id attrib=item %}">Show Category Conflicts</a>
+                    <a class="data" href="{% url 'show_belongsto' username=username projectname=projectname object=item.id attrib=item %}">Show Belongs To</a>
+                    </div></li></ul>
+                {% elif model == 'status' %} <li class="dropdown" class="dispData"><a href="javascript:void(0)" class="dropData">{{ item.name }}</a><div class="dropdown-content">
+                    <a class="data" href="{% url 'show_statusconflicts' username=username projectname=projectname object=item.id attrib=item %}">Show Status Conflicts</a>
+                    <a class="data" href="{% url 'show_affectedby' username=username projectname=projectname object=item.id attrib=item %}">Show Affected By</a>
+                    </div></li></ul>
+                {% elif model == 'events' %} <li class="dropdown" class="dispData"><a href="javascript:void(0)" class="dropData">{{ item.name }}</a><div class="dropdown-content">
+                    <a class="data" href="{% url 'show_periods' username=username projectname=projectname object=item.id attrib=item %}">Show Periods</a>
+                    </div></li></ul>
+                {% elif model == 'affected by' %}
+                    <li class="dropdown" class="dispData"><a href="javascript:void(0)" class="dropData">{{ item.entity.name }} - {{item.period.name }} - {{item.status.name }}</a><div class="dropdown-content">
+                    <a class="data" href="{% url 'show_periods' username=username projectname=projectname object=item.id attrib=item %}">Show Periods</a>
+                    </div></li></ul>
+                {% elif model == 'belongs to' %}
+                    <li class="dropdown" class="dispData"><a href="javascript:void(0)" class="dropData">{{ item.category.name }} - {{item.entity.name }}</a><div class="dropdown-content">
+                    </div></li></ul>
+                {% elif model == 'category conflicts' %} {{ item.category_1.name }} - {{item.category_2.name }}
+                {% elif model == 'entity relations' %} {{ item.period.name }}: {{ item.entity_1.name }} (- {{ item.name }} -) {{item.entity_2.name }}
+                {% elif model == 'status conflicts' %} {{ item.status_1.name }} x {{item.status_2.name }}
+                {% elif model == 'periods' %}
+                    <li class="dropdown" class="dispData"><a href="javascript:void(0)" class="dropData">{{ item.name }}: {{ item.event_start.name }} - {{item.event_end.name }}</a><div class="dropdown-content">
+                    <a class="data" href="{% url 'show_entityrelations' username=username projectname=projectname object=item.id attrib=item %}">Show Entity Relations</a>
+                    </div></li></ul>
                 {% endif %}
             </td>
             </tr>

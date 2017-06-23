@@ -1,4 +1,4 @@
-from Prosaist.view_scripts.display_base import view as view_base
+from Prosaist.view_scripts.display_base import view as view_base, show as filter_base
 from Prosaist.models import Entity
 
 

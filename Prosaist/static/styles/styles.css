@@ -45,11 +45,6 @@ a.userbar:hover {
     color: white;
 }
 
-a.active {
-    background-color: #0FAA2B;
-    color: white;
-}
-
 ul.projectbar {
     list-style-type: none;
     margin: 0;
@@ -161,3 +156,30 @@ a.button:visited {
     color: white;
     text-decoration: none;
 }
+
+ul.dispData {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li.dispData {
+    background-color: white;
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.dropData{
+    background-color: white;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 1px 1px;
+    text-decoration: none;
+}
+
+li.dispData:hover a.dropData {
+    background-color: blue;
+    color:white;
+}
+
