@@ -83,23 +83,17 @@ def view_base(request, username, projectname, model, modelform, msg_success, msg
                         except:
                             conflict1 = Category_Conflict.objects.filter(category_1_id=category)
                             conflict2 = Category_Conflict.objects.filter(category_2_id=category)
-                            isConflict = False
                             for n in conflict1:
                                 if model.objects.filter(project=project, entity_id=entity,
                                                         category_id=n.category_2_id).exists():
                                     messages.add_message(request, messages.ERROR, message_belongsTo_conflict)
-                                    isConflict = True
                             for n in conflict2:
                                 if model.objects.filter(project=project, entity_id=entity,
                                                         category_id=n.category_1_id).exists():
                                     messages.add_message(request, messages.ERROR, message_belongsTo_conflict)
-                                    isConflict = True
-                            if not isConflict:
-                                object = model(project=project, entity_id=entity, category_id=category)
-                                object.save()
-                                messages.add_message(request, messages.SUCCESS, msg_success)
-                            else:
-                                messages.add_message(request, messages.ERROR, msg_error)
+                            object = model(project=project, entity_id=entity, category_id=category)
+                            object.save()
+                            messages.add_message(request, messages.SUCCESS, msg_success)
                     elif model == Status_Conflict:
                         category1 = int(request.POST.get('status1', ''))
                         category2 = int(request.POST.get('status2', ''))

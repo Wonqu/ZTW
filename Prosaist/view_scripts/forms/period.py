@@ -11,7 +11,7 @@ class PeriodCreateForm(forms.Form):
     name = forms.CharField(label='Period name', max_length=255)
     event1 = MyModelChoiceField(label='First event', queryset=Event.objects.all())
     event2 = MyModelChoiceField(label='Second event', queryset=Event.objects.all())
-    project = forms.IntegerField(label='Project ID')
+    project = forms.IntegerField(label='Project ID', widget=forms.HiddenInput())
 
     def __init__(self, *args, **kwargs):
         projectid = kwargs.pop('projectid', None)

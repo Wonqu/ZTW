@@ -10,7 +10,7 @@ class MyModelChoiceField(forms.ModelChoiceField):
 class BelongsToCreateForm(forms.Form):
     entity = MyModelChoiceField(label='Entity', queryset=Entity.objects.all())
     category = MyModelChoiceField(label='Category', queryset=Category.objects.all())
-    project = forms.IntegerField(label='Project ID')
+    project = forms.IntegerField(label='Project ID', widget=forms.HiddenInput())
 
     def __init__(self, *args, **kwargs):
         projectid = kwargs.pop('projectid', None)

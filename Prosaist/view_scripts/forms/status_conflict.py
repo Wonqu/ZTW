@@ -10,7 +10,7 @@ class MyModelChoiceField(forms.ModelChoiceField):
 class StatusConflictCreateForm(forms.Form):
     status1 = MyModelChoiceField(label='First status', queryset=Status.objects.all())
     status2 = MyModelChoiceField(label='Second status', queryset=Status.objects.all())
-    project = forms.IntegerField(label='Project ID')
+    project = forms.IntegerField(label='Project ID', widget=forms.HiddenInput())
 
     def __init__(self, *args, **kwargs):
         projectid = kwargs.pop('projectid', None)

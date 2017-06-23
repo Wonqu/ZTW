@@ -12,7 +12,7 @@ def view(request):
             form.save()
             user = authenticate(username=form.cleaned_data["username"], password=form.cleaned_data["password1"])
             login(request, user)
-            return HttpResponseRedirect('./u/' + user.username + '/')
+            return HttpResponseRedirect('../u/' + user.username + '/')
     else:
         form = SignupForm()
     return render(request, "userform.html", {'form': form})

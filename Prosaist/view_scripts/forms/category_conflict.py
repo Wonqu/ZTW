@@ -10,7 +10,7 @@ class MyModelChoiceField(forms.ModelChoiceField):
 class CategoryConflictCreateForm(forms.Form):
     category1 = MyModelChoiceField(label='First category', queryset=Category.objects.all())
     category2 = MyModelChoiceField(label='Second category', queryset=Category.objects.all())
-    project = forms.IntegerField(label='Project ID')
+    project = forms.IntegerField(label='Project ID', widget=forms.HiddenInput())
 
     def __init__(self, *args, **kwargs):
         projectid = kwargs.pop('projectid', None)

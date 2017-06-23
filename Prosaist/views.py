@@ -24,7 +24,7 @@ from Prosaist.view_scripts import display_entity_relation as view_dis_entity_rel
 from Prosaist.view_scripts import display_status_conflicts as view_dis_status_conflict
 from Prosaist.view_scripts import display_userprojects as view_userprojects
 from Prosaist.view_scripts import display_project as view_project
-
+from Prosaist.view_scripts.delete import *
 
 def index(request):
     return view_index.view(request)

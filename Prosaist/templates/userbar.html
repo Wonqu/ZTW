@@ -8,6 +8,18 @@
             <div class="dropdown-content">
                 <a class="user" href="{% url 'entity' username=username projectname=projectname %}">Add Entity</a>
                 <a class="user" href="{% url 'display_entity' username=username projectname=projectname %}">Show Entities</a>
+                <a class="user" href="{% url 'entity_relation' username=username projectname=projectname %}">Add Entity
+                    Relation</a>
+                <a class="user" href="{% url 'display_entity_relation' username=username projectname=projectname %}">Show
+                    Entities Relations</a>
+                <a class="user" href="{% url 'affectedby' username=username projectname=projectname %}">Add Status for
+                    Entity</a>
+                <a class="user" href="{% url 'display_affectedby' username=username projectname=projectname %}">Show
+                    Statuses for Entities</a>
+                <a class="user" href="{% url 'belongsto' username=username projectname=projectname %}">Add Entity to
+                    Category</a>
+                <a class="user" href="{% url 'display_belongsto' username=username projectname=projectname %}">Show
+                    Entities in Categories</a>
             </div>
         </li>
 
@@ -16,6 +28,10 @@
             <div class="dropdown-content">
                 <a class="user" href="{% url 'status' username=username projectname=projectname %}">Add Status</a>
                 <a class="user" href="{% url 'display_status' username=username projectname=projectname %}">Show Statuses</a>
+                <a class="user" href="{% url 'status_conflict' username=username projectname=projectname %}">Add Status
+                    Conflict</a>
+                <a class="user" href="{% url 'display_status_conflict' username=username projectname=projectname %}">Show
+                    Status Conflicts</a>
             </div>
         </li>
 
@@ -24,6 +40,10 @@
             <div class="dropdown-content">
                 <a class="user" href="{% url 'category' username=username projectname=projectname %}">Add Category</a>
                 <a class="user" href="{% url 'display_category' username=username projectname=projectname %}">Show Categories</a>
+                <a class="user" href="{% url 'category_conflict' username=username projectname=projectname %}">Add
+                    Category Conflict</a>
+                <a class="user" href="{% url 'display_category_conflicts' username=username projectname=projectname %}">Show
+                    Category Conflicts</a>
             </div>
         </li>
 
@@ -32,54 +52,9 @@
             <div class="dropdown-content">
                 <a class="user" href="{% url 'event' username=username projectname=projectname %}">Add Event</a>
                 <a class="user" href="{% url 'display_event' username=username projectname=projectname %}">Show Events</a>
-            </div>
-        </li>
-
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Category Conflict</a>
-            <div class="dropdown-content">
-                <a class="user" href="{% url 'category_conflict' username=username projectname=projectname %}">Add Category Conflict</a>
-                <a class="user" href="{% url 'display_category_conflicts' username=username projectname=projectname %}">Show Category Conflicts</a>
-            </div>
-        </li>
-
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Period</a>
-            <div class="dropdown-content">
                 <a class="user" href="{% url 'period' username=username projectname=projectname %}">Add Period</a>
-                <a class="user" href="{% url 'display_period' username=username projectname=projectname %}">Show Periods</a>
-            </div>
-        </li>
-
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Affected By</a>
-            <div class="dropdown-content">
-                <a class="user" href="{% url 'affectedby' username=username projectname=projectname %}">Add Affected By</a>
-                <a class="user" href="{% url 'display_affectedby' username=username projectname=projectname %}">Show Affected By</a>
-            </div>
-        </li>
-
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Belongs To</a>
-            <div class="dropdown-content">
-                <a class="user" href="{% url 'belongsto' username=username projectname=projectname %}">Add Belongs To</a>
-                <a class="user" href="{% url 'display_belongsto' username=username projectname=projectname %}">Show Belongs To</a>
-            </div>
-        </li>
-
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Entity Relation</a>
-            <div class="dropdown-content">
-                <a class="user" href="{% url 'entity_relation' username=username projectname=projectname %}">Add Entity Relation</a>
-                <a class="user" href="{% url 'display_entity_relation' username=username projectname=projectname %}">Show Entities Relations</a>
-            </div>
-        </li>
-
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Status Conflict</a>
-            <div class="dropdown-content">
-                <a class="user" href="{% url 'status_conflict' username=username projectname=projectname %}">Add Status Conflict</a>
-                <a class="user" href="{% url 'display_status_conflict' username=username projectname=projectname %}">Show Status Conflicts</a>
+                <a class="user" href="{% url 'display_period' username=username projectname=projectname %}">Show
+                    Periods</a>
             </div>
         </li>
 

@@ -12,7 +12,7 @@ class EntityRelationCreateForm(forms.Form):
     period = MyModelChoiceField(label='Period', queryset=Period.objects.all())
     entity1 = MyModelChoiceField(label='First entity', queryset=Entity.objects.all())
     entity2 = MyModelChoiceField(label='Second entity', queryset=Entity.objects.all())
-    project = forms.IntegerField(label='Project ID')
+    project = forms.IntegerField(label='Project ID', widget=forms.HiddenInput())
 
     def __init__(self, *args, **kwargs):
         projectid = kwargs.pop('projectid', None)

@@ -1,9 +1,6 @@
 from django.conf.urls import url
 
-from Prosaist.views import index, login, logout, signup, event, entity, category, category_conflict, period, affectedby, \
-    belongsto, status_conflict, entity_relation, status, display_entity,display_status, display_category, display_event, \
-    display_category_conflicts, display_affected, display_belongsto, display_entity_relation, display_period,\
-    display_status_conflicts, userprojects, project
+from Prosaist.views import *
 
 urlpatterns = [
      url(r'^$', index, name='index')
@@ -35,17 +32,41 @@ urlpatterns = [
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/categories/$', display_category,
           name='display_category')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/events/$', display_event, name='display_event')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_category_conflicts/$', display_category_conflicts,
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/category_conflicts/$', display_category_conflicts,
           name='display_category_conflicts')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_period/$', display_period,
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/periods/$', display_period,
           name='display_period')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_affected/$', display_affected,
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/affecteds/$', display_affected,
           name='display_affectedby')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_belongsto/$', display_belongsto,
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/belongstos/$', display_belongsto,
           name='display_belongsto')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_entity_relation/$', display_entity_relation,
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/entity_relations/$', display_entity_relation,
           name='display_entity_relation')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_status_conflict/$', display_status_conflicts,
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/status_conflicts/$', display_status_conflicts,
           name='display_status_conflict')
+
+    # Delete
+    ,
+    url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/entities/delete/(?P<id>[\w\s.@+-]+)$', delete_entity,
+        name='delete_entity')
+    ,
+    url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/statuses/delete/(?P<id>[\w\s.@+-]+)$', delete_status,
+        name='delete_status')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/categories/delete/(?P<id>[\w\s.@+-]+)$',
+          delete_category, name='delete_category')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/events/delete/(?P<id>[\w\s.@+-]+)$', delete_event,
+          name='delete_event')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/category_conflicts/delete/(?P<id>[\w\s.@+-]+)$',
+          delete_cat_conf, name='delete_cat_conf')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/periods/delete/(?P<id>[\w\s.@+-]+)$', delete_period,
+          name='delete_period')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/affecteds/delete/(?P<id>[\w\s.@+-]+)$',
+          delete_affected, name='delete_affected')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/belongstos/delete/(?P<id>[\w\s.@+-]+)$',
+          delete_belongsto, name='delete_belongsto')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/entity_relations/delete/(?P<id>[\w\s.@+-]+)$',
+          delete_entity_relation, name='delete_entity_relation')
+    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/status_conflicts/delete/(?P<id>[\w\s.@+-]+)$',
+          delete_status_conflict, name='delete_status_conflict')
 
 ]
