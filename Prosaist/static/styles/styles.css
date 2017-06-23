@@ -169,7 +169,7 @@ li.dispData {
     text-decoration: none;
 }
 
-a.dropData{
+a.dropData {
     background-color: white;
     display: inline-block;
     color: black;
@@ -180,6 +180,7 @@ a.dropData{
 
 li.dispData:hover a.dropData {
     background-color: blue;
-    color:white;
+    color: white;
 }
+
 

@@ -9,7 +9,7 @@ links = {
     , 'Event': '_event'
     , 'Category_Conflict': '_cat_conf'
     , 'Period': '_period'
-    , 'AffectedBy': '_affected'
+    , 'AffectedBy': '_affectedby'
     , 'BelongsTo': '_belongsto'
     , 'Entity_Relation': '_entity_relation'
     , 'Status_Conflict': '_status_conflict'

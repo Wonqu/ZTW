@@ -7,5 +7,6 @@ def view(request, username, projectname):
 
 
 def show(request, username, projectname, object, attrib):
-    return filter_base(request=request, username=username, projectname=projectname, model=Entity_Relation, object=object,
+    return filter_base(request=request, username=username, projectname=projectname, model=Entity_Relation,
+                       object=object,
                        attrib=attrib)

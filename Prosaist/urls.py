@@ -32,8 +32,9 @@ urlpatterns = [
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/categories/$', display_category,
           name='display_category')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/events/$', display_event, name='display_event')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_category_conflicts/$', display_category_conflicts,
-          name='display_category_conflicts')
+    ,
+    url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_category_conflicts/$', display_category_conflicts,
+        name='display_category_conflicts')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_period/$', display_period,
           name='display_period')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/dis_affected/$', display_affected,
@@ -60,25 +61,31 @@ urlpatterns = [
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/periods/delete/(?P<id>[\w\s.@+-]+)$', delete_period,
           name='delete_period')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/affecteds/delete/(?P<id>[\w\s.@+-]+)$',
-          delete_affected, name='delete_affected')
+          delete_affected, name='delete_affectedby')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/belongstos/delete/(?P<id>[\w\s.@+-]+)$',
           delete_belongsto, name='delete_belongsto')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/entity_relations/delete/(?P<id>[\w\s.@+-]+)$',
           delete_entity_relation, name='delete_entity_relation')
     , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/status_conflicts/delete/(?P<id>[\w\s.@+-]+)$',
           delete_status_conflict, name='delete_status_conflict')
-    #Show
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_affected/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
-          show_affected, name='show_affectedby')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_belongsto/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
-          show_belongsto, name='show_belongsto')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_categoryconflicts/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
-          show_category_conflicts, name='show_categoryconflicts')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_statusconflicts/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
-          show_status_conflicts, name='show_statusconflicts')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_periods/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
-          show_periods, name='show_periods')
-    , url(r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_entityrelations/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+    # Show
+    , url(
+        r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_affected/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+        show_affected, name='show_affectedby')
+    , url(
+        r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_belongsto/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+        show_belongsto, name='show_belongsto')
+    , url(
+        r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_categoryconflicts/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+        show_category_conflicts, name='show_categoryconflicts')
+    , url(
+        r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_statusconflicts/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+        show_status_conflicts, name='show_statusconflicts')
+    , url(
+        r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_periods/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
+        show_periods, name='show_periods')
+    , url(
+        r'^u/(?P<username>[\w.@+-]+)/(?P<projectname>[\w\s.@+-]+)/show_entityrelations/(?P<object>[\w\s.@+-]+)/(?P<attrib>[\w\s.@+-]+)/$',
         show_entity_relations, name='show_entityrelations')
 
 ]

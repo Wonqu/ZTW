@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}"/>
     <title>Prosaist</title>
 </head>
-<body bgcolor="#20b2aa">
+<body bgcolor="#00bfff">
 
 <div class="navbar" id="navbar">
     {% if request.user.username %}
@@ -33,9 +33,9 @@
 {% block content %}{% endblock %}
 
 {% if messages %}
-    <ul class="messages">
+    <ul class="col-lg-3">
         {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            <li>{{ message }}</li>
         {% endfor %}
     </ul>
 {% endif %}
