@@ -1,2 +1,2 @@
-# ZTW
-ztw lab
+# Prosaist
+Projekt zaliczeniowy na laboratorium z ZTW
